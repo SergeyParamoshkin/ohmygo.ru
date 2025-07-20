@@ -8,7 +8,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: serg3091/ohmygo.ru
+  IMAGE_NAME: sergeyparamoshkin/ohmygo.ru
 
 jobs:
   build-and-deploy:
