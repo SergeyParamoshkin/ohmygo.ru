@@ -1,4 +1,4 @@
-FROM hugomods/debian-ci-non-root-0.148.1 AS build 
+FROM hugomods/hugo:debian-ci-non-root-0.148.1 AS build 
 
 WORKDIR /application
 COPY . /application/
