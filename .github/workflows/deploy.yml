@@ -1,0 +1,37 @@
+name: Deploy to Kubernetes
+
+on:
+  workflow_run:
+    workflows: ["Build Hugo Site"]
+    types:
+      - completed
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout main repository
+      uses: actions/checkout@v4
+      with:
+        repository: SergeyParamoshkin/ohmygo
+        path: main-repo
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Update deployment image
+      run: |
+        cd main-repo
+        sed -i "s|image: .*ohmygo.ru:.*|image: ghcr.io/sergeyparamoshkin/ohmygo.ru:${{ github.event.workflow_run.head_sha }}|" ohmygo.ru-k8s/k8s/deployment.yaml
+
+    - name: Commit updated deployment
+      run: |
+        cd main-repo
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add ohmygo.ru-k8s/k8s/deployment.yaml
+        git diff --staged --quiet || git commit -m "Update deployment image to ${{ github.event.workflow_run.head_sha }}"
+        git push
