@@ -1,0 +1,14 @@
+# Build artifacts
+public/
+resources/_gen/
+
+# Git
+.git/
+.github/
+
+# Development files
+.DS_Store
+*.log
+
+# Keep themes directory - it's needed for Hugo build
+# !themes/
