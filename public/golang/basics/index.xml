@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Index on ohmygo project</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content in Index on ohmygo project</description>
+    <title>Основы языка on ohmygo project</title>
+    <link>http://localhost:1313/golang/basics/</link>
+    <description>Recent content in Основы языка on ohmygo project</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/golang/basics/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hello World</title>
       <link>http://localhost:1313/golang/basics/hello-world/</link>
