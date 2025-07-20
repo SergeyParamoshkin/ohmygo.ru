@@ -2,7 +2,9 @@ FROM hugomods/hugo:debian-ci-0.148.1 AS build
 
 WORKDIR /application
 COPY . /application/
-RUN hugo build 
+RUN ls -la /application/themes/hugo-book/
+RUN hugo list all
+RUN hugo build --gc
 
 
 FROM nginx:latest AS app  
