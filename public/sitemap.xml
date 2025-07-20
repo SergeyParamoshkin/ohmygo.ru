@@ -2,26 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/golang/basics/hello-world/</loc>
+    <loc>http://ohmygo.ru/golang/basics/hello-world/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/example/</loc>
+    <loc>http://ohmygo.ru/docs/example/</loc>
   </url><url>
-    <loc>http://localhost:1313/golang/basics/</loc>
+    <loc>http://ohmygo.ru/golang/basics/</loc>
   </url><url>
-    <loc>http://localhost:1313/golang/</loc>
+    <loc>http://ohmygo.ru/golang/</loc>
   </url><url>
-    <loc>http://localhost:1313/golang/concurrency/</loc>
+    <loc>http://ohmygo.ru/golang/concurrency/</loc>
   </url><url>
-    <loc>http://localhost:1313/golang/web/</loc>
+    <loc>http://ohmygo.ru/golang/web/</loc>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>http://ohmygo.ru/posts/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://ohmygo.ru/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/docs/</loc>
+    <loc>http://ohmygo.ru/docs/</loc>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>http://ohmygo.ru/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://ohmygo.ru/tags/</loc>
   </url>
 </urlset>
