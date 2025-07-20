@@ -3,12 +3,8 @@ name: Build and Deploy Hugo Site
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'ohmygo.ru/**'
   pull_request:
     branches: [ main ]
-    paths:
-      - 'ohmygo.ru/**'
 
 env:
   REGISTRY: ghcr.io
@@ -49,7 +45,7 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v5
       with:
-        context: ./ohmygo.ru
+        context: .
         push: true
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
@@ -59,13 +55,13 @@ jobs:
     - name: Update deployment image
       if: github.ref == 'refs/heads/main'
       run: |
-        sed -i "s|image: serg3091/ohmygo.ru:.*|image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}|" ohmygo.ru-k8s/k8s/deployment.yaml
+        sed -i "s|image: serg3091/ohmygo.ru:.*|image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}|" ../ohmygo.ru-k8s/k8s/deployment.yaml
         
     - name: Commit updated deployment
       if: github.ref == 'refs/heads/main'
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add ohmygo.ru-k8s/k8s/deployment.yaml
+        git add ../ohmygo.ru-k8s/k8s/deployment.yaml
         git diff --staged --quiet || git commit -m "Update deployment image to ${{ github.sha }}"
         git push
